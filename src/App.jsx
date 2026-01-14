@@ -1,28 +1,17 @@
-// src/App.jsx
-import React from "react";
-import Navbar from "./components/layout/Navbar";
-import Hero from "./components/sections/Hero";
-import Services from "./components/sections/Services";
-import Values from "./components/sections/Values";
-import Process from "./components/sections/Process";
-import Contact from "./components/sections/Contact";
-import Footer from "./components/layout/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/utils/ScrollToTop";
+import Home from "./pages/Home";
+import WebDev from "./pages/WebDev";
 
 function App() {
   return (
-    <div className="font-body text-text-main dark:text-white bg-background-light dark:bg-background-dark min-h-screen selection:bg-primary/20 selection:text-primary">
-      <Navbar />
-
-      <main>
-        <Hero />
-        <Services />
-        <Values />
-        <Process />
-        <Contact />
-      </main>
-
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/servicios/web-development" element={<WebDev />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

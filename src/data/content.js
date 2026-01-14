@@ -13,9 +13,8 @@ import {
 } from "lucide-react";
 
 export const NAV_LINKS = [
-  { name: "Servicios", href: "#services" },
-  { name: "Proyectos", href: "#work" },
-  { name: "Nosotros", href: "#about" },
+  { name: "Portafolio", href: "/#work" },
+  { name: "Nosotros", href: "/#about" },
 ];
 
 export const SERVICES = [
@@ -23,21 +22,25 @@ export const SERVICES = [
     icon: Code2,
     title: "Desarrollo Web a Medida",
     desc: "Frontend y Backend robustos construidos con React, Node.js y arquitecturas modernas escalables.",
+    link: "/servicios/web-development",
   },
   {
     icon: Smartphone,
     title: "Aplicaciones Móviles",
     desc: "Apps nativas y multiplataforma (iOS & Android) diseñadas para retener usuarios y maximizar el engagement.",
+    link: "/servicios/mobile-apps",
   },
   {
     icon: Database,
     title: "Sistemas ERP & CRM",
     desc: "Integraciones de gestión empresarial para optimizar operaciones, inventarios y flujos de trabajo complejos.",
+    link: "/servicios/erp-crm",
   },
   {
     icon: CloudCog,
     title: "Arquitectura SaaS",
     desc: "Plataformas Software-as-a-Service diseñadas para alta disponibilidad, multi-tenencia y seguridad bancaria.",
+    link: "/servicios/saas",
   },
 ];
 

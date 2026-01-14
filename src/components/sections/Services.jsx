@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import { Link } from "react-router-dom";
 import { SERVICES } from "../../data/content";
 import { motion as Motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react"; // Importamos un icono de flecha hacia arriba/derecha
 
-// Definimos las variantes fuera para reutilizarlas y limpiar el código
 const cardVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -14,25 +14,47 @@ const textVariants = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
 };
 
-// Componente de Tarjeta individual
-const ServiceCard = ({ icon: Icon, title, desc }) => {
-  return (
-    <Motion.div
-      // CORRECCIÓN 1: Solo pasamos variants. El padre controla el "when" (cuándo).
-      variants={cardVariants}
-      className="group p-6 rounded-xl bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 hover:border-primary/30 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:hover:shadow-none hover:-translate-y-1"
-    >
+const ServiceCard = ({ icon: Icon, title, desc, link }) => {
+  const CardContent = (
+    <div className="group h-full p-8 rounded-2xl bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 hover:border-primary/30 transition-all duration-300 hover:shadow-[0_20px_40px_rgba(0,0,0,0.03)] dark:hover:shadow-none hover:-translate-y-1 cursor-pointer flex flex-col">
+      {/* Icono Principal */}
       <div className="w-12 h-12 rounded-lg bg-primary/5 dark:bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
         <Icon strokeWidth={1.5} className="w-7 h-7" />
       </div>
 
-      <h4 className="font-display font-bold text-xl text-text-main dark:text-white mb-3">
-        {title}
-      </h4>
+      {/* Título y Descripción */}
+      <div className="flex-grow">
+        <h4 className="font-display font-bold text-xl text-text-main dark:text-white mb-3">
+          {title}
+        </h4>
+        <p className="text-sm text-text-muted dark:text-gray-400 leading-relaxed mb-6">
+          {desc}
+        </p>
+      </div>
 
-      <p className="text-sm text-text-muted dark:text-gray-400 leading-relaxed">
-        {desc}
-      </p>
+      {/* INDICADOR DE NAVEGACIÓN (Solo se muestra si hay link) */}
+      {link && (
+        <div className="pt-4 border-t border-gray-50 dark:border-gray-800/50 flex items-center justify-between group-hover:border-primary/20 transition-colors">
+          <span className="text-xs font-bold uppercase tracking-widest text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-10px] group-hover:translate-x-0">
+            Saber más
+          </span>
+          <div className="text-primary transform transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-[-2px]">
+            <ArrowUpRight className="w-5 h-5" />
+          </div>
+        </div>
+      )}
+    </div>
+  );
+
+  return (
+    <Motion.div variants={cardVariants}>
+      {link ? (
+        <Link to={link} className="block h-full">
+          {CardContent}
+        </Link>
+      ) : (
+        CardContent
+      )}
     </Motion.div>
   );
 };
@@ -43,7 +65,7 @@ const Services = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15, // Esto ahora sí funcionará
+        staggerChildren: 0.15,
         delayChildren: 0.2,
       },
     },
@@ -55,11 +77,10 @@ const Services = () => {
       id="services"
     >
       <div className="max-w-7xl mx-auto px-4 md:px-10">
-        {/* Header de la sección */}
         <div className="flex flex-col md:flex-row gap-10 mb-16 items-start md:items-end justify-between">
           <div className="max-w-2xl">
             <Motion.h2
-              variants={textVariants} // CORRECCIÓN 2: Añadimos variants
+              variants={textVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -69,7 +90,7 @@ const Services = () => {
             </Motion.h2>
 
             <Motion.h3
-              variants={textVariants} // CORRECCIÓN 2
+              variants={textVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -81,7 +102,7 @@ const Services = () => {
           </div>
 
           <Motion.p
-            variants={textVariants} // CORRECCIÓN 2
+            variants={textVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -93,7 +114,6 @@ const Services = () => {
           </Motion.p>
         </div>
 
-        {/* Grid de Tarjetas Animadas */}
         <Motion.div
           variants={containerVariants}
           initial="hidden"
