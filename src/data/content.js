@@ -28,7 +28,7 @@ export const SERVICES = [
     icon: Smartphone,
     title: "Aplicaciones Móviles",
     desc: "Apps nativas y multiplataforma (iOS & Android) diseñadas para retener usuarios y maximizar el engagement.",
-    link: "/servicios/mobile-apps",
+    link: "/servicios/mobile-development",
   },
   {
     icon: Database,

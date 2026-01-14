@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { SERVICES } from "../../data/content";
 import { motion as Motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react"; // Importamos un icono de flecha hacia arriba/derecha
+import { ArrowUpRight } from "lucide-react";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -23,7 +23,7 @@ const ServiceCard = ({ icon: Icon, title, desc, link }) => {
       </div>
 
       {/* Título y Descripción */}
-      <div className="flex-grow">
+      <div className="grow">
         <h4 className="font-display font-bold text-xl text-text-main dark:text-white mb-3">
           {title}
         </h4>
@@ -32,7 +32,6 @@ const ServiceCard = ({ icon: Icon, title, desc, link }) => {
         </p>
       </div>
 
-      {/* INDICADOR DE NAVEGACIÓN (Solo se muestra si hay link) */}
       {link && (
         <div className="pt-4 border-t border-gray-50 dark:border-gray-800/50 flex items-center justify-between group-hover:border-primary/20 transition-colors">
           <span className="text-xs font-bold uppercase tracking-widest text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-10px] group-hover:translate-x-0">

@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/utils/ScrollToTop";
 import Home from "./pages/Home";
 import WebDev from "./pages/WebDev";
+import MobileDev from "./pages/MobileDev";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/servicios/web-development" element={<WebDev />} />
+        <Route path="/servicios/mobile-development" element={<MobileDev />} />
       </Routes>
     </BrowserRouter>
   );
