@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+/* Definición del tema directamente en CSS (Estilo Tailwind v4) */
+@theme {
+  /* Colores Personalizados */
+  --color-primary: #00888f;
+  --color-primary-dark: #006b70;
+  --color-accent: #ffbd4a;
+
+  --color-background-light: #f9fafb;
+  --color-background-dark: #1e2025;
+
+  --color-surface-light: #ffffff;
+  --color-surface-dark: #2a2d35;
+
+  --color-text-main: #0c1c1d;
+  --color-text-muted: #5c7072;
+
+  /* Fuentes Personalizadas */
+  --font-display: "Epilogue", sans-serif;
+  --font-body: "Manrope", sans-serif;
+}
+
+/* Estilos globales y Scrollbar */
+@layer utilities {
+  /* Scrollbar personalizado */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+}
+
+/* Soporte para modo oscuro por clase en v4 */
+/* En v4, dark mode suele ser automático por media query, 
+   pero si quieres forzarlo con clase 'dark' en el HTML tag: */
+:root {
+  color-scheme: light dark;
+}
+.dark {
+  color-scheme: dark;
+}
