@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion as Motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Code2 } from "lucide-react"; // Iconos modernos
+import { Menu, X, Code2 } from "lucide-react";
 import { NAV_LINKS } from "../../data/content";
 import Button from "../ui/Button";
 
@@ -8,7 +8,6 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Detectar scroll para cambiar el estilo del navbar
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
