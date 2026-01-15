@@ -38,7 +38,7 @@ const Navbar = () => {
               <Code2 className="w-6 h-6" />
             </div>
             <span className="text-xl font-bold font-display tracking-tight">
-              TechAgency
+              Pluma8
             </span>
           </Link>
 
