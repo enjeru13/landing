@@ -1,18 +1,10 @@
-// src/components/sections/HeroIllustration.jsx
-import React from "react";
-import { Rocket } from "lucide-react"; // Importamos el icono de Lucide
+import { Rocket } from "lucide-react";
 
 const HeroIllustration = () => {
   return (
-    // CAMBIO: aspect-[4/3] con corchetes para asegurar compatibilidad
     <div className="relative w-full aspect-square md:aspect-4/3 flex items-center justify-center perspective-1000">
-      {/* Fondo de brillo detrás de la ilustración */}
       <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full opacity-50"></div>
-
-      {/* Ventana Principal (Simulación de IDE/Dashboard) */}
-      {/* NOTA: Usamos colores oscuros fijos (bg-[#1e2025]) porque los IDEs suelen ser oscuros siempre */}
       <div className="relative w-full max-w-lg bg-background-dark border border-gray-700 rounded-xl shadow-2xl overflow-hidden transform transition-transform hover:scale-[1.02] duration-500">
-        {/* Header de la ventana */}
         <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-700 bg-surface-dark">
           <div className="w-3 h-3 rounded-full bg-red-500"></div>
           <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
@@ -22,7 +14,6 @@ const HeroIllustration = () => {
           </div>
         </div>
 
-        {/* Contenido (Código Simulado) */}
         <div className="p-6 font-mono text-sm space-y-3 leading-relaxed">
           <div className="flex gap-2">
             <span className="text-gray-600 select-none">1</span>
@@ -71,18 +62,15 @@ const HeroIllustration = () => {
             <span className="text-gray-600 select-none">7</span>
             <div>{"}"}</div>
           </div>
-          {/* Cursor parpadeante */}
           <div className="w-2 h-5 bg-primary animate-pulse mt-2 ml-4"></div>
         </div>
       </div>
 
-      {/* Elemento Flotante (Glassmorphism) */}
       <div
         className="absolute -bottom-6 -left-4 md:-left-10 bg-white/80 dark:bg-surface-dark/80 backdrop-blur-md p-4 rounded-xl shadow-xl border border-white/20 dark:border-gray-600 flex items-center gap-4 animate-bounce"
         style={{ animationDuration: "4s" }}
       >
         <div className="bg-green-100 dark:bg-green-900/30 p-3 rounded-full text-green-600 dark:text-green-400">
-          {/* CAMBIO: Usamos Rocket de Lucide */}
           <Rocket className="w-6 h-6" />
         </div>
         <div>

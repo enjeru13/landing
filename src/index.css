@@ -1,8 +1,7 @@
 @import "tailwindcss";
 
-/* Definición del tema directamente en CSS (Estilo Tailwind v4) */
 @theme {
-  /* Colores Personalizados */
+  /* --- TEMA PRINCIPAL (Web & Mobile Dev) --- */
   --color-primary: #00888f;
   --color-primary-dark: #006b70;
   --color-accent: #ffbd4a;
@@ -16,14 +15,26 @@
   --color-text-main: #0c1c1d;
   --color-text-muted: #5c7072;
 
-  /* Fuentes Personalizadas */
   --font-display: "Epilogue", sans-serif;
   --font-body: "Manrope", sans-serif;
+
+  /* --- TEMA ERP (Enterprise Solutions) --- */
+  /* Estos son los colores del diseño nuevo que me pasaste */
+  --color-erp-primary: #0d4659;
+  --color-erp-primary-hover: #093240;
+  --color-erp-accent: #4dbccb;
+
+  --color-erp-bg-light: #f9fafa;
+  --color-erp-bg-dark: #1c1f22;
+
+  --color-erp-surface-light: #ffffff;
+  --color-erp-surface-dark: #2a2e33;
+
+  --color-erp-text-main: #0e171b;
+  --color-erp-text-sub: #5c707c;
 }
 
-/* Estilos globales y Scrollbar */
 @layer utilities {
-  /* Scrollbar personalizado */
   ::-webkit-scrollbar {
     width: 8px;
   }
@@ -37,11 +48,16 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #a8a8a8;
   }
+
+  /* Scrollbar oscuro para modo dark (opcional, para que combine mejor) */
+  .dark ::-webkit-scrollbar-track {
+    background: #1e2025;
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    background: #4a4d55;
+  }
 }
 
-/* Soporte para modo oscuro por clase en v4 */
-/* En v4, dark mode suele ser automático por media query, 
-   pero si quieres forzarlo con clase 'dark' en el HTML tag: */
 :root {
   color-scheme: light dark;
 }
