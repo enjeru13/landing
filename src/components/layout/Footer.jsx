@@ -1,8 +1,7 @@
-import React from "react";
-import { Code2 } from "lucide-react"; // Solo importamos iconos de UI genéricos
+import { Code2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import { FOOTER_LINKS, SOCIAL_LINKS } from "../../data/content";
 
-// Definimos los iconos manualmente para evitar el error de "Deprecated" de Lucide
 const SocialIcons = {
   GitHub: (props) => (
     <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" {...props}>
@@ -48,10 +47,7 @@ const Footer = () => {
   return (
     <footer className="bg-white dark:bg-[#15171b] border-t border-gray-100 dark:border-gray-800 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 md:px-10">
-        {/* Grid Principal */}
-        {/* Usamos grid-cols-4 porque asumo que FOOTER_LINKS tiene 3 columnas + 1 de marca = 4 */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          {/* Columna 1: Marca y Redes */}
           <div className="space-y-6">
             <div className="flex items-center gap-3 text-text-main dark:text-white">
               <div className="text-primary">
@@ -72,21 +68,20 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Columnas de Links (Se generan dinámicamente) */}
-          {FOOTER_LINKS.map((section) => (
-            <div key={section.title}>
+          {FOOTER_LINKS.map((section, idx) => (
+            <div key={idx}>
               <h4 className="font-bold text-text-main dark:text-white mb-6">
                 {section.title}
               </h4>
               <ul className="space-y-4">
-                {section.links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="text-sm text-text-muted dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+                {section.links.map((link, linkIdx) => (
+                  <li key={linkIdx}>
+                    <Link
+                      to={link.href}
+                      className="text-text-muted dark:text-gray-400 hover:text-primary transition-colors text-sm"
                     >
-                      {link}
-                    </a>
+                      {link.name}
+                    </Link>
                   </li>
                 ))}
               </ul>

@@ -4,6 +4,12 @@ import {
   Smartphone,
   Zap,
   CheckCircle2,
+  Fingerprint,
+  WifiOff,
+  BellRing,
+  CreditCard,
+  MapPin,
+  Cloud,
 } from "lucide-react";
 import { SiSwift, SiKotlin, SiFlutter, SiReact } from "react-icons/si";
 
@@ -114,6 +120,50 @@ export const MOBILE_TECH = {
       color: "text-[#61dafb]",
       bgIcon: "bg-[#20232a]",
       badgeColor: "bg-cyan-500/10 border-cyan-500/20 text-cyan-400",
+    },
+  ],
+};
+
+export const MOBILE_FEATURES = {
+  title: "Potencia de Nivel Empresarial",
+  description:
+    "Integramos capacidades avanzadas del dispositivo para crear experiencias fluidas, seguras y potentes.",
+  items: [
+    {
+      id: 1,
+      title: "Seguridad Biométrica",
+      desc: "Inicio de sesión seguro y sin fricción integrando FaceID y TouchID para máxima protección del usuario.",
+      icon: Fingerprint,
+    },
+    {
+      id: 2,
+      title: "Modo Offline",
+      desc: "Sincronización de base de datos local (SQLite/Realm) asegurando que tu app funcione perfectamente sin internet.",
+      icon: WifiOff,
+    },
+    {
+      id: 3,
+      title: "Notificaciones Smart",
+      desc: "Push notifications segmentadas y con rich-media para re-conectar con los usuarios en el momento exacto.",
+      icon: BellRing,
+    },
+    {
+      id: 4,
+      title: "Pagos In-App",
+      desc: "Integración fluida con Apple Pay y Google Pay para una monetización sin fricción.",
+      icon: CreditCard,
+    },
+    {
+      id: 5,
+      title: "Geolocalización",
+      desc: "Rastreo preciso, geofencing e integración de mapas para servicios basados en ubicación.",
+      icon: MapPin,
+    },
+    {
+      id: 6,
+      title: "Sincronización Cloud",
+      desc: "Sincronización de datos en tiempo real entre todos los dispositivos del usuario para una experiencia continua.",
+      icon: Cloud,
     },
   ],
 };

@@ -1,9 +1,6 @@
-import React from "react";
 import { motion as Motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import Button from "../../ui/Button";
 import { MOBILE_HERO } from "../../../data/mobile-content";
-// Asegúrate de que la ruta a tu imagen sea correcta
 import iPhoneScreenImg from "../../../assets/Widgets=None.png";
 
 const MobileHero = () => {
@@ -89,7 +86,7 @@ const MobileHero = () => {
               <div className="absolute top-52 -left-[6px] w-[2px] h-12 bg-gray-600 rounded-l-md"></div>
               <div className="absolute top-40 -right-[6px] w-[2px] h-16 bg-gray-600 rounded-r-md"></div>
 
-              <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-7 bg-black rounded-full z-40 flex items-center justify-center gap-2 pointer-events-none">
+              <div className="absolute top-1 left-1/2 -translate-x-1/2 w-22 h-5 bg-black rounded-full z-40 flex items-center justify-center gap-2 pointer-events-none">
                 <div className="w-12 h-3 bg-[#111] rounded-full"></div>
               </div>
               <div className="w-full h-full bg-black rounded-[40px] overflow-hidden relative">

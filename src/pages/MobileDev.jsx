@@ -4,6 +4,7 @@ import Button from "../components/ui/Button";
 import MobileHero from "../components/sections/mobile/MobileHero";
 import MobilePhilosophy from "../components/sections/mobile/MobilePhilosophy";
 import MobileTechStack from "../components/sections/mobile/MobileTechStack";
+import MobileFeatures from "../components/sections/mobile/MobileFeatures";
 
 const MobileDev = () => {
   return (
@@ -12,9 +13,10 @@ const MobileDev = () => {
 
       <main className="overflow-hidden">
         <MobileHero />
-        <div className="h-20"></div>
+        <div className="h-10"></div>
         <MobileTechStack />
         <MobilePhilosophy />
+        <MobileFeatures />
         <section className="py-24 bg-white dark:bg-surface-dark border-t border-gray-100 dark:border-gray-800 text-center">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 dark:text-white">
