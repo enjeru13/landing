@@ -10,7 +10,7 @@ import {
 export const PORTFOLIO_CONTENT = {
   hero: {
     badge: "Caso de Estudio Destacado",
-    titlePart1: "Nexus ERP:",
+    titlePart1: "Nexus CRM:",
     titlePart2: "Motor Logístico Global",
     description:
       "Una solución en la nube totalmente integrada para el manejo de inventario, gestión de flotas y analítica en tiempo real en más de 40 países.",
@@ -22,12 +22,6 @@ export const PORTFOLIO_CONTENT = {
     videoThumbnail:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop", // Dashboard logístico
   },
-  filters: [
-    "Todos",
-    "Aplicaciones Web",
-    "Soluciones Móviles",
-    "Sistemas Cloud",
-  ],
   projects: [
     {
       id: 1,
