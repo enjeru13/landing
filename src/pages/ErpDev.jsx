@@ -6,8 +6,14 @@ import ErpArchitecture from "../components/sections/erp/ErpArchitecture";
 import ErpAnalytics from "../components/sections/erp/ErpAnalytics";
 import ErpIntegrations from "../components/sections/erp/ErpIntegrations";
 import ErpSecurity from "../components/sections/erp/ErpSecurity";
+import { useNavigate } from "react-router-dom";
 
 const ErpDev = () => {
+  const navigate = useNavigate();
+  const handleContactClick = () => {
+    navigate("/#contact");
+  };
+
   return (
     <div className="font-body text-text-main dark:text-white bg-background-light dark:bg-background-dark min-h-screen selection:bg-erp-primary/20 selection:text-erp-primary">
       <Navbar />
@@ -29,7 +35,10 @@ const ErpDev = () => {
               sistema ERP o tu CRM a la medida que escale junto con tu negocio.
             </p>
             <div className="flex justify-center gap-4">
-              <Button className="py-4 px-10 text-lg bg-erp-primary hover:bg-erp-primary-hover border-transparent">
+              <Button
+                className="py-4 px-10 text-lg bg-erp-primary hover:bg-erp-primary-hover border-transparent"
+                onClick={handleContactClick}
+              >
                 Iniciar un Proyecto
               </Button>
             </div>

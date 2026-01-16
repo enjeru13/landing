@@ -5,6 +5,7 @@ import WebDev from "./pages/WebDev";
 import MobileDev from "./pages/MobileDev";
 import ErpDev from "./pages/ErpDev";
 import AboutUs from "./pages/AboutUs";
+import Portfolio from "./pages/Portfolio";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <ScrollToTop />
       <Routes>
         {/* Navbar Links */}
+        <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/nosotros" element={<AboutUs />} />
 
         {/* Cards Links */}

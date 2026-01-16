@@ -1,13 +1,11 @@
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import Button from "../components/ui/Button";
-import MobileHero from "../components/sections/mobile/MobileHero";
-import MobilePhilosophy from "../components/sections/mobile/MobilePhilosophy";
-import MobileTechStack from "../components/sections/mobile/MobileTechStack";
-import MobileFeatures from "../components/sections/mobile/MobileFeatures";
+import PortfolioHero from "../components/sections/portfolio/PortfolioHero";
+import PortfolioGrid from "../components/sections/portfolio/PortfolioGrid";
 import { useNavigate } from "react-router-dom";
 
-const MobileDev = () => {
+const Portfolio = () => {
   const navigate = useNavigate();
   const handleContactClick = () => {
     navigate("/#contact");
@@ -18,22 +16,23 @@ const MobileDev = () => {
       <Navbar />
 
       <main className="overflow-hidden">
-        <MobileHero />
-        <MobileTechStack />
-        <MobilePhilosophy />
-        <MobileFeatures />
-        <section className="py-24 bg-white dark:bg-surface-dark border-t border-gray-100 dark:border-gray-800 text-center">
-          <div className="max-w-3xl mx-auto px-4">
+        <PortfolioHero />
+        <PortfolioGrid />
+
+        <section className="py-24 bg-white dark:bg-surface-dark border-t border-gray-100 dark:border-gray-800 text-center relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full bg-primary/5 opacity-50"></div>
+
+          <div className="relative z-10 max-w-3xl mx-auto px-4">
             <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 dark:text-white">
-              ¿Tienes una idea de App?
+              ¿Listo para construir algo extraordinario?
             </h2>
             <p className="text-lg text-text-muted dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-              Convertimos tu visión en una aplicación móvil nativa de alto
-              rendimiento.
+              Convertimos problemas complejos en soluciones de software
+              elegantes. Hablemos de tu próximo proyecto.
             </p>
             <div className="flex justify-center gap-4">
               <Button
-                className="py-4 px-10 text-lg"
+                className="py-4 px-10 text-lg shadow-xl shadow-primary/20"
                 onClick={handleContactClick}
               >
                 Iniciar un Proyecto
@@ -48,4 +47,4 @@ const MobileDev = () => {
   );
 };
 
-export default MobileDev;
+export default Portfolio;

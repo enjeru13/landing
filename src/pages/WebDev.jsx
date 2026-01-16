@@ -6,8 +6,14 @@ import TechStack from "../components/sections/web/TechStack";
 import WebFeatures from "../components/sections/web/WebFeatures";
 import Lifecycle from "../components/sections/web/Lifecycle";
 import CaseStudy from "../components/sections/web/CaseStudy";
+import { useNavigate } from "react-router-dom";
 
 const WebDev = () => {
+  const navigate = useNavigate();
+  const handleContactClick = () => {
+    navigate("/#contact");
+  };
+
   return (
     <div className="font-body text-text-main dark:text-white bg-background-light dark:bg-background-dark min-h-screen selection:bg-primary/20 selection:text-primary">
       <Navbar />
@@ -31,7 +37,10 @@ const WebDev = () => {
             </p>
 
             <div className="flex justify-center gap-4">
-              <Button className="py-4 px-10 text-lg">
+              <Button
+                className="py-4 px-10 text-lg"
+                onClick={handleContactClick}
+              >
                 Iniciar un Proyecto
               </Button>
             </div>

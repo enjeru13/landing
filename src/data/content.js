@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 
 export const NAV_LINKS = [
-  { name: "Portafolio", href: "/#work" },
+  { name: "Portafolio", href: "/portfolio" },
   { name: "Nosotros", href: "/nosotros" },
 ];
 
