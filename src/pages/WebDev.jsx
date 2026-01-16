@@ -24,9 +24,15 @@ const WebDev = () => {
             <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 dark:text-white">
               ¿Listo para construir el futuro?
             </h2>
+
+            <p className="text-lg text-text-muted dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+              Desde sitios corporativos hasta aplicaciones web complejas,
+              creamos experiencias digitales rápidas, seguras y escalables.
+            </p>
+
             <div className="flex justify-center gap-4">
               <Button className="py-4 px-10 text-lg">
-                Solicitar Cotización
+                Iniciar un Proyecto
               </Button>
             </div>
           </div>

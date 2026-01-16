@@ -23,7 +23,7 @@ export const ERP_HERO = {
   titlePart1: "Orquesta la Inteligencia",
   titlePart2: "de tu Empresa",
   description:
-    "Una suite ERP escalable diseñada para unificar operaciones, desde la logística hasta la toma de decisiones directivas, en un ecosistema blindado.",
+    "Una suite ERP & CRM escalable diseñada para unificar operaciones, desde la logística hasta la toma de decisiones directivas, en un ecosistema blindado.",
   ctaPrimary: "Solicitar Demo",
   ctaSecondary: "Ver Video Tour",
   stats: [
@@ -51,9 +51,9 @@ export const ERP_ARCHITECTURE = {
     },
     {
       id: 2,
-      title: "Capital Humano",
-      desc: "Gestión completa del ciclo de vida del empleado, automatización de nóminas y análisis de rendimiento.",
-      icon: Users,
+      title: "Actualizaciones Automáticas",
+      desc: "No vuelva a preocuparse por los parches. Desplegamos nuevas funcionalidades y correcciones de seguridad al instante a través de la nube.",
+      icon: Cloud,
     },
     {
       id: 3,
@@ -63,9 +63,9 @@ export const ERP_ARCHITECTURE = {
     },
     {
       id: 4,
-      title: "Suite Financiera",
-      desc: "Libro mayor automatizado, soporte multi-moneda, cumplimiento fiscal y previsión financiera.",
-      icon: Landmark,
+      title: "Accesibilidad 24/7",
+      desc: "Acceda a sus paneles de ERP y CRM de forma segura desde cualquier dispositivo, en cualquier parte del mundo.",
+      icon: Globe2,
     },
   ],
 };

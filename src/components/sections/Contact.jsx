@@ -4,13 +4,12 @@ import { Mail, MapPin, Send, Check, Loader2, ChevronDown } from "lucide-react";
 import Button from "../ui/Button";
 
 const Contact = () => {
-  const [formState, setFormState] = useState("idle"); // idle | submitting | success
+  const [formState, setFormState] = useState("idle");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormState("submitting");
 
-    // Simulación de envío al backend (2 segundos)
     setTimeout(() => {
       setFormState("success");
     }, 2000);
@@ -21,14 +20,12 @@ const Contact = () => {
       className="py-24 bg-background-light dark:bg-background-dark relative overflow-hidden"
       id="contact"
     >
-      {/* Elemento decorativo de fondo */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute -top-[20%] -right-[10%] w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 md:px-10 relative z-10">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
-          {/* Left: Contact Info */}
           <Motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -58,10 +55,10 @@ const Contact = () => {
                     Escríbenos
                   </p>
                   <a
-                    href="mailto:hola@techagency.com"
+                    href="mailto:pluma8@techagency.com"
                     className="text-lg font-bold text-text-main dark:text-white hover:text-primary transition-colors"
                   >
-                    hola@techagency.com
+                    pluma8@techagency.com
                   </a>
                 </div>
               </div>

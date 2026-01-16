@@ -4,8 +4,23 @@ import { ERP_HERO } from "../../../data/erp-content";
 import ErpHeroImage from "../../../assets/users.png";
 import ErpHeroImageDark from "../../../assets/users_dark.png";
 import Button from "../../ui/Button";
+import { useNavigate } from "react-router-dom";
 
 const ErpHero = () => {
+  const navigate = useNavigate();
+  const handleContactClick = () => {
+    navigate("/#contact");
+  };
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   const { badge, titlePart1, titlePart2, description } = ERP_HERO;
 
   return (
@@ -51,8 +66,14 @@ const ErpHero = () => {
           </p>
 
           {/* Botones */}
-          <div className="flex flex-wrap justify-center gap-4 pt-4">
-            <Button className="w-full bg-erp-primary sm:w-auto justify-center">
+          <Motion.div
+            variants={fadeInUp}
+            className="flex flex-col sm:flex-row gap-4 mt-2 w-full sm:w-auto"
+          >
+            <Button
+              className="w-full sm:w-auto justify-center"
+              onClick={handleContactClick}
+            >
               Solicitar Propuesta <ArrowRight className="w-4 h-4" />
             </Button>
             <Button
@@ -61,7 +82,7 @@ const ErpHero = () => {
             >
               Ver Portafolio <FileText className="w-4 h-4" />
             </Button>
-          </div>
+          </Motion.div>
         </Motion.div>
 
         <Motion.div

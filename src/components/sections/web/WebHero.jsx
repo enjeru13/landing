@@ -1,15 +1,29 @@
 import { motion as Motion } from "framer-motion";
 import { Code2, CheckCircle2 } from "lucide-react";
 import Button from "../../ui/Button";
+import { FileText, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const WebHero = () => {
+  const navigate = useNavigate();
+  const handleContactClick = () => {
+    navigate("/#contact");
+  };
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   return (
     <section className="relative w-full px-4 md:px-10 pb-16 lg:pb-24 pt-32 lg:pt-40">
-      {/* Background Decorativo */}
       <div className="absolute top-0 right-0 w-2/3 h-full bg-linear-to-l from-primary/5 to-transparent skew-x-12 translate-x-1/4 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20 relative z-10">
-        {/* Texto */}
         <Motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -35,13 +49,25 @@ const WebHero = () => {
             negocio.
           </p>
 
-          <div className="flex flex-wrap gap-4 mt-2">
-            <Button>Empezar Proyecto</Button>
-            <Button variant="outline">Ver Portafolio</Button>
-          </div>
+          <Motion.div
+            variants={fadeInUp}
+            className="flex flex-col sm:flex-row gap-4 mt-2 w-full sm:w-auto"
+          >
+            <Button
+              className="w-full sm:w-auto justify-center"
+              onClick={handleContactClick}
+            >
+              Solicitar Propuesta <ArrowRight className="w-4 h-4" />
+            </Button>
+            <Button
+              variant="outline"
+              className="w-full sm:w-auto justify-center"
+            >
+              Ver Portafolio <FileText className="w-4 h-4" />
+            </Button>
+          </Motion.div>
         </Motion.div>
 
-        {/* Imagen */}
         <Motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -58,7 +84,6 @@ const WebHero = () => {
             ></div>
             <div className="absolute inset-0 bg-primary/20 mix-blend-multiply dark:bg-primary/40"></div>
 
-            {/* Widget Flotante */}
             <div className="absolute bottom-6 left-6 right-6 p-6 bg-white/90 dark:bg-black/80 backdrop-blur-md rounded-xl border border-white/20 shadow-lg">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center text-green-500">

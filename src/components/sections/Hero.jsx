@@ -2,8 +2,14 @@ import { motion as Motion } from "framer-motion";
 import { ArrowRight, FileText } from "lucide-react";
 import Button from "../ui/Button";
 import HeroIllustration from "./HeroIllustration";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+  const handleContactClick = () => {
+    navigate("/#contact");
+  };
+
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -19,13 +25,11 @@ const Hero = () => {
 
   return (
     <section className="relative bg-background-light dark:bg-background-dark overflow-hidden pt-24 pb-12 lg:pt-24 lg:min-h-[90vh] flex items-center">
-      {/* Background Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]"></div>
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 md:px-10 relative z-10 w-full">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-          {/* Columna de Texto */}
           <Motion.div
             className="flex flex-col gap-6 lg:w-1/2 w-full"
             initial="hidden"
@@ -50,7 +54,6 @@ const Hero = () => {
               className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-text-main dark:text-white"
             >
               Ingeniería digital que{" "}
-              {/* Corregido bg-linear-to-r a bg-gradient-to-r para compatibilidad estándar */}
               <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-accent">
                 escala
               </span>{" "}
@@ -62,15 +65,18 @@ const Hero = () => {
               className="text-base sm:text-lg text-text-muted dark:text-gray-300 leading-relaxed max-w-lg"
             >
               Desarrollamos ecosistemas web, aplicaciones móviles y sistemas ERP
-              a medida. Código robusto, diseño preciso y estrategias pensadas
-              para el crecimiento.
+              & CRM a medida. Código robusto, diseño preciso y estrategias
+              pensadas para el crecimiento.
             </Motion.p>
 
             <Motion.div
               variants={fadeInUp}
               className="flex flex-col sm:flex-row gap-4 mt-2 w-full sm:w-auto"
             >
-              <Button className="w-full sm:w-auto justify-center">
+              <Button
+                className="w-full sm:w-auto justify-center"
+                onClick={handleContactClick}
+              >
                 Solicitar Propuesta <ArrowRight className="w-4 h-4" />
               </Button>
               <Button
@@ -81,8 +87,6 @@ const Hero = () => {
               </Button>
             </Motion.div>
 
-            {/* --- SECCIÓN DE MÉTRICAS CORREGIDA --- */}
-            {/* Antes: gap-20 (Rompe en móvil). Ahora: gap-4 md:gap-12 */}
             <Motion.div
               variants={fadeInUp}
               className="pt-8 mt-4 border-t border-gray-200 dark:border-gray-800 flex flex-wrap items-center justify-between sm:justify-start gap-4 sm:gap-8 md:gap-12"
@@ -94,7 +98,6 @@ const Hero = () => {
                 <p className="text-sm text-text-muted">Proyectos</p>
               </div>
 
-              {/* Divisores ocultos en móviles muy pequeños para evitar ruido visual, visibles en sm en adelante */}
               <div className="hidden sm:block w-px h-10 bg-gray-200 dark:bg-gray-800"></div>
 
               <div className="flex flex-col">
@@ -115,7 +118,6 @@ const Hero = () => {
             </Motion.div>
           </Motion.div>
 
-          {/* Columna Visual */}
           <Motion.div
             className="lg:w-1/2 w-full mt-8 lg:mt-0"
             initial={{ opacity: 0, x: 50 }}

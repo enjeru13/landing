@@ -27,7 +27,7 @@ const MobileDev = () => {
             </p>
             <div className="flex justify-center gap-4">
               <Button className="py-4 px-10 text-lg">
-                Agendar Consultoría
+                Iniciar un Proyecto
               </Button>
             </div>
           </div>

@@ -14,7 +14,7 @@ import {
 
 export const NAV_LINKS = [
   { name: "Portafolio", href: "/#work" },
-  { name: "Nosotros", href: "/#about" },
+  { name: "Nosotros", href: "/nosotros" },
 ];
 
 export const SERVICES = [
@@ -35,12 +35,6 @@ export const SERVICES = [
     title: "Sistemas ERP & CRM",
     desc: "Integraciones de gestión empresarial para optimizar operaciones, inventarios y flujos de trabajo complejos.",
     link: "/servicios/erp-crm",
-  },
-  {
-    icon: CloudCog,
-    title: "Arquitectura SaaS",
-    desc: "Plataformas Software-as-a-Service diseñadas para alta disponibilidad, multi-tenencia y seguridad bancaria.",
-    link: "/servicios/saas",
   },
 ];
 

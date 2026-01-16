@@ -54,7 +54,7 @@ const Footer = () => {
                 <Code2 className="w-8 h-8" />
               </div>
               <span className="font-bold font-display text-xl tracking-tight">
-                TechAgency
+                Pluma8
               </span>
             </div>
             <p className="text-text-muted dark:text-gray-400 text-sm leading-relaxed">
@@ -95,7 +95,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-text-muted dark:text-gray-500 text-center md:text-left">
-            © {currentYear} TechAgency Inc. Todos los derechos reservados.
+            © {currentYear} Pluma8. Todos los derechos reservados.
           </p>
         </div>
       </div>

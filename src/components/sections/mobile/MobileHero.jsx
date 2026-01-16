@@ -2,8 +2,24 @@ import { motion as Motion } from "framer-motion";
 import Button from "../../ui/Button";
 import { MOBILE_HERO } from "../../../data/mobile-content";
 import iPhoneScreenImg from "../../../assets/Widgets=None.png";
+import { FileText, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const MobileHero = () => {
+  const navigate = useNavigate();
+  const handleContactClick = () => {
+    navigate("/#contact");
+  };
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   const {
     badge,
     titlePart1,
@@ -55,15 +71,21 @@ const MobileHero = () => {
           </Motion.p>
 
           <Motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-wrap gap-4 pt-4"
+            variants={fadeInUp}
+            className="flex flex-col sm:flex-row gap-4 mt-2 w-full sm:w-auto"
           >
-            <div className="flex flex-wrap gap-4 mt-2">
-              <Button>Empezar Proyecto</Button>
-              <Button variant="outline">Ver Portafolio</Button>
-            </div>
+            <Button
+              className="w-full sm:w-auto justify-center"
+              onClick={handleContactClick}
+            >
+              Solicitar Propuesta <ArrowRight className="w-4 h-4" />
+            </Button>
+            <Button
+              variant="outline"
+              className="w-full sm:w-auto justify-center"
+            >
+              Ver Portafolio <FileText className="w-4 h-4" />
+            </Button>
           </Motion.div>
         </div>
 
