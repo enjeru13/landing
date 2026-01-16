@@ -7,6 +7,7 @@ import WebFeatures from "../components/sections/web/WebFeatures";
 import Lifecycle from "../components/sections/web/Lifecycle";
 import CaseStudy from "../components/sections/web/CaseStudy";
 import { useNavigate } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 const WebDev = () => {
   const navigate = useNavigate();
@@ -41,7 +42,7 @@ const WebDev = () => {
                 className="py-4 px-10 text-lg"
                 onClick={handleContactClick}
               >
-                Iniciar un Proyecto
+                Solicitar Propuesta <ArrowRight className="w-4 h-4" />
               </Button>
             </div>
           </div>

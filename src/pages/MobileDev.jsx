@@ -6,6 +6,7 @@ import MobilePhilosophy from "../components/sections/mobile/MobilePhilosophy";
 import MobileTechStack from "../components/sections/mobile/MobileTechStack";
 import MobileFeatures from "../components/sections/mobile/MobileFeatures";
 import { useNavigate } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 const MobileDev = () => {
   const navigate = useNavigate();
@@ -36,7 +37,7 @@ const MobileDev = () => {
                 className="py-4 px-10 text-lg"
                 onClick={handleContactClick}
               >
-                Iniciar un Proyecto
+                Solicitar Propuesta <ArrowRight className="w-4 h-4" />
               </Button>
             </div>
           </div>

@@ -4,6 +4,7 @@ import Button from "../components/ui/Button";
 import PortfolioHero from "../components/sections/portfolio/PortfolioHero";
 import PortfolioGrid from "../components/sections/portfolio/PortfolioGrid";
 import { useNavigate } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 const Portfolio = () => {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ const Portfolio = () => {
                 className="py-4 px-10 text-lg shadow-xl shadow-primary/20"
                 onClick={handleContactClick}
               >
-                Iniciar un Proyecto
+                Solicitar Propuesta <ArrowRight className="w-4 h-4" />
               </Button>
             </div>
           </div>

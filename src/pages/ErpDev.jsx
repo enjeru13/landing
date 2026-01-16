@@ -7,6 +7,7 @@ import ErpAnalytics from "../components/sections/erp/ErpAnalytics";
 import ErpIntegrations from "../components/sections/erp/ErpIntegrations";
 import ErpSecurity from "../components/sections/erp/ErpSecurity";
 import { useNavigate } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 const ErpDev = () => {
   const navigate = useNavigate();
@@ -39,7 +40,7 @@ const ErpDev = () => {
                 className="py-4 px-10 text-lg bg-erp-primary hover:bg-erp-primary-hover border-transparent"
                 onClick={handleContactClick}
               >
-                Iniciar un Proyecto
+                Solicitar Propuesta <ArrowRight className="w-4 h-4" />
               </Button>
             </div>
           </div>

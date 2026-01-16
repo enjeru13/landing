@@ -6,6 +6,7 @@ import AboutStats from "../components/sections/about/AboutStats";
 import AboutTeam from "../components/sections/about/AboutTeam";
 import AboutValues from "../components/sections/about/AboutValues";
 import { useNavigate } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 const AboutUs = () => {
   const navigate = useNavigate();
@@ -40,7 +41,7 @@ const AboutUs = () => {
                 className="py-4 px-10 text-lg shadow-xl shadow-primary/20"
                 onClick={handleContactClick}
               >
-                Iniciar un Proyecto
+                Solicitar Propuesta <ArrowRight className="w-4 h-4" />
               </Button>
             </div>
           </div>

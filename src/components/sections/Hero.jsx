@@ -9,6 +9,9 @@ const Hero = () => {
   const handleContactClick = () => {
     navigate("/#contact");
   };
+  const handlePortfolioClick = () => {
+    navigate("/portfolio");
+  };
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
@@ -82,6 +85,7 @@ const Hero = () => {
               <Button
                 variant="outline"
                 className="w-full sm:w-auto justify-center"
+                onClick={handlePortfolioClick}
               >
                 Ver Portafolio <FileText className="w-4 h-4" />
               </Button>
