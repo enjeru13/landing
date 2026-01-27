@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom"; // Importamos Link y useLocation
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion as Motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Code2 } from "lucide-react";
 import { NAV_LINKS } from "../../data/content";
@@ -42,7 +42,6 @@ const Navbar = () => {
             </span>
           </Link>
 
-          {/* Desktop Nav */}
           <div className="hidden md:flex flex-1 justify-end gap-8 items-center">
             <nav className="flex items-center gap-8">
               {NAV_LINKS.map((link) => (
@@ -63,7 +62,6 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Mobile Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 text-text-main dark:text-white hover:bg-gray-100 dark:hover:bg-white/5 rounded-md transition-colors"
@@ -73,7 +71,6 @@ const Navbar = () => {
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
           <Motion.div

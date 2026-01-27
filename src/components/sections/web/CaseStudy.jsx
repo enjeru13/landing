@@ -52,7 +52,7 @@ const CaseStudy = () => {
               }}
             ></div>
 
-            <div className="absolute inset-0 bg-linear-to-t from-primary/60 via-transparent to-transparent lg:bg-gradient-to-l lg:from-primary/90 lg:to-transparent opacity-90 mix-blend-multiply pointer-events-none"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-primary/60 via-transparent to-transparent lg:bg-linear-to-l lg:from-primary/90 lg:to-transparent opacity-90 mix-blend-multiply pointer-events-none"></div>
           </div>
         </div>
       </div>

@@ -1,21 +1,17 @@
 import {
   TrendingUp,
   PackageSearch,
-  Users,
   Waypoints,
-  Landmark,
   Cloud,
   CreditCard,
   MessageSquare,
   PieChart,
   ShieldCheck,
   Mail,
-  Shield,
   FileCheck,
   Lock,
   Globe2,
   FileClock,
-  FileText,
 } from "lucide-react";
 
 export const ERP_HERO = {

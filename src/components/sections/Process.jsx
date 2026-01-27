@@ -1,4 +1,3 @@
-import React from "react";
 import { motion as Motion } from "framer-motion";
 import { PROCESS_STEPS } from "../../data/content";
 
@@ -17,7 +16,6 @@ const ProcessStep = ({ step }) => {
       <div className="relative z-10">
         <div
           className={`w-24 h-24 rounded-2xl flex items-center justify-center transition-all duration-300 shadow-xl group-hover:scale-110 
-          /* ESTILOS DINÁMICOS LUZ/OSCURIDAD */
           bg-white dark:bg-surface-dark 
           border border-gray-100 dark:border-white/10
           ${step.color} ${step.borderColor}

@@ -7,7 +7,6 @@ const ErpIntegrations = () => {
   return (
     <section className="py-20 bg-erp-bg-light dark:bg-erp-bg-dark transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Header */}
         <Motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -22,7 +21,6 @@ const ErpIntegrations = () => {
           </p>
         </Motion.div>
 
-        {/* Grid de Integraciones */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {items.map((item, idx) => (
             <Motion.div
@@ -33,7 +31,6 @@ const ErpIntegrations = () => {
               transition={{ delay: idx * 0.1 }}
               className="flex flex-col items-center justify-center p-6 bg-white dark:bg-erp-surface-dark border border-gray-200 dark:border-white/5 rounded-lg hover:border-erp-primary dark:hover:border-erp-accent transition-all duration-300 cursor-default hover:-translate-y-1 hover:shadow-lg dark:hover:shadow-none group"
             >
-              {/* Icono con color específico */}
               <item.icon
                 className={`w-10 h-10 mb-3 ${item.color} group-hover:scale-110 transition-transform duration-300`}
                 strokeWidth={1.5}

@@ -1,4 +1,3 @@
-import React from "react";
 import { motion as Motion } from "framer-motion";
 import { MOBILE_PHILOSOPHY } from "../../../data/mobile-content";
 
@@ -68,7 +67,6 @@ const MobilePhilosophy = () => {
                       </p>
                     </div>
                   </div>
-                  {/* Avatares simulados */}
                   <div className="flex -space-x-2">
                     <div className="w-6 h-6 rounded-full bg-red-500 border-2 border-white dark:border-[#1a1a1a]"></div>
                     <div className="w-6 h-6 rounded-full bg-blue-500 border-2 border-white dark:border-[#1a1a1a]"></div>
@@ -115,12 +113,10 @@ const MobilePhilosophy = () => {
                   transition={{ delay: idx * 0.15 }}
                   className="flex gap-5 p-5 rounded-2xl bg-white dark:bg-white/5 border border-gray-100 dark:border-white/5 hover:border-primary/30 hover:shadow-lg dark:hover:bg-white/10 transition-all duration-300 group"
                 >
-                  {/* Icono */}
                   <div className="mt-1 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 text-primary group-hover:scale-110 transition-transform duration-300">
                     <item.icon size={24} strokeWidth={1.5} />
                   </div>
 
-                  {/* Textos */}
                   <div>
                     <h4 className="text-lg font-bold text-text-main dark:text-white mb-2 group-hover:text-primary transition-colors">
                       {item.title}

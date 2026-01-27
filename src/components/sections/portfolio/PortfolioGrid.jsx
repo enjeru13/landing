@@ -1,4 +1,3 @@
-import React from "react";
 import { motion as Motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { PORTFOLIO_CONTENT } from "../../../data/portfolio-content";
@@ -70,7 +69,7 @@ const PortfolioGrid = () => {
                   href="#"
                   className="text-text-muted text-sm font-medium hover:text-text-main dark:hover:text-white transition-colors flex items-center gap-1"
                 >
-                  Caso de Estudio
+                  Ver Proyecto
                 </a>
               </div>
             </div>

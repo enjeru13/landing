@@ -55,7 +55,6 @@ const ErpHero = () => {
             </span>
           </div>
 
-          {/* Título Masivo */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-erp-text-main dark:text-white leading-[1.1] tracking-tight">
             {titlePart1} <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-erp-primary to-erp-accent dark:from-white dark:to-erp-accent">
@@ -63,12 +62,9 @@ const ErpHero = () => {
             </span>
           </h1>
 
-          {/* Descripción */}
           <p className="text-xl text-erp-text-sub dark:text-gray-400 leading-relaxed max-w-2xl mx-auto">
             {description}
           </p>
-
-          {/* Botones */}
           <Motion.div
             variants={fadeInUp}
             className="flex flex-col sm:flex-row gap-4 mt-2 w-full sm:w-auto"

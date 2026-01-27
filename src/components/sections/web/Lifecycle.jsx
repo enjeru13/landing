@@ -1,4 +1,3 @@
-import React from "react";
 import { motion as Motion } from "framer-motion";
 import { LIFECYCLE_STEPS } from "../../../data/web-content";
 
@@ -16,7 +15,6 @@ const Lifecycle = () => {
         </div>
 
         <div className="relative">
-          {/* Línea Vertical (Desktop) */}
           <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-800 hidden md:block -translate-x-1/2"></div>
 
           <div className="space-y-12">
@@ -32,7 +30,6 @@ const Lifecycle = () => {
                     isEven ? "" : "md:flex-row-reverse"
                   }`}
                 >
-                  {/* Texto */}
                   <div
                     className={`w-full md:w-1/2 ${
                       isEven
@@ -51,14 +48,12 @@ const Lifecycle = () => {
                     </p>
                   </div>
 
-                  {/* Icono Central */}
                   <div className="relative z-10 shrink-0">
                     <div className="w-14 h-14 rounded-full bg-white dark:bg-background-dark border-2 border-primary flex items-center justify-center text-primary shadow-lg">
                       <item.icon className="w-6 h-6" />
                     </div>
                   </div>
 
-                  {/* Espacio vacío para equilibrio */}
                   <div className="hidden md:block w-1/2"></div>
                 </Motion.div>
               );

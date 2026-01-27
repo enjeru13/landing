@@ -6,7 +6,6 @@ const AboutHero = () => {
 
   return (
     <section className="w-full max-w-7xl mx-auto px-4 md:px-10 py-16 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      {/* Texto */}
       <div className="lg:col-span-7 flex flex-col gap-6">
         <Motion.span
           initial={{ opacity: 0, y: 10 }}
@@ -38,8 +37,6 @@ const AboutHero = () => {
           {description}
         </Motion.p>
       </div>
-
-      {/* Imagen Visual */}
       <Motion.div
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}

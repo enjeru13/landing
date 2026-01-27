@@ -1,9 +1,7 @@
-// src/data/content.js
 import {
   Code2,
   Smartphone,
   Database,
-  CloudCog,
   Zap,
   Layout,
   Search,

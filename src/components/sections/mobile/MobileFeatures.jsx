@@ -1,17 +1,15 @@
-import React from "react";
 import { motion as Motion } from "framer-motion";
 import { MOBILE_FEATURES } from "../../../data/mobile-content";
 
 const MobileFeatures = () => {
   const { title, description, items } = MOBILE_FEATURES;
 
-  // Variantes para la animación escalonada (stagger)
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1, // Cada hijo aparece 0.1s después del anterior
+        staggerChildren: 0.1,
       },
     },
   };
@@ -23,22 +21,18 @@ const MobileFeatures = () => {
 
   return (
     <section className="py-24 bg-gray-50 dark:bg-[#0b0c0d] relative overflow-hidden">
-      {/* --- BACKGROUND GRID PATTERN --- */}
-      {/* Usamos un gradiente CSS para crear la cuadrícula. Opacidad baja para que sea sutil */}
       <div
         className="absolute inset-0 opacity-[0.03] dark:opacity-[0.07] pointer-events-none"
         style={{
           backgroundImage: `linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px)`,
           backgroundSize: "40px 40px",
-          color: "#888", // El color del gris define la línea
+          color: "#888",
         }}
       ></div>
 
-      {/* Efecto de viñeta para suavizar los bordes del grid */}
       <div className="absolute inset-0 bg-linear-to-b from-gray-50/80 via-transparent to-gray-50/80 dark:from-[#0b0c0d]/80 dark:to-[#0b0c0d]/80 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10">
-        {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <Motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -59,7 +53,6 @@ const MobileFeatures = () => {
           </Motion.p>
         </div>
 
-        {/* Grid Cards */}
         <Motion.div
           variants={containerVariants}
           initial="hidden"
@@ -73,7 +66,6 @@ const MobileFeatures = () => {
               variants={itemVariants}
               className="group p-8 rounded-2xl bg-white dark:bg-surface-dark border border-gray-100 dark:border-white/5 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-xl dark:shadow-none"
             >
-              {/* Icon Container */}
               <div className="w-14 h-14 rounded-xl bg-primary/10 dark:bg-white/5 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300 text-primary dark:text-white">
                 <feature.icon className="w-7 h-7" strokeWidth={1.5} />
               </div>

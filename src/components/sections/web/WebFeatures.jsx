@@ -1,5 +1,4 @@
 import { motion as Motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import { WEB_FEATURES } from "../../../data/web-content";
 
 const WebFeatures = () => {

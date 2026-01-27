@@ -89,10 +89,7 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Separador */}
         <div className="w-full h-px bg-gray-100 dark:bg-gray-800 mb-8"></div>
-
-        {/* Copyright */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-text-muted dark:text-gray-500 text-center md:text-left">
             © {currentYear} Pluma8. Todos los derechos reservados.

@@ -1,4 +1,3 @@
-import React from "react";
 import { motion as Motion } from "framer-motion";
 import { TECH_STACK } from "../../../data/web-content";
 
@@ -23,12 +22,9 @@ const TechStack = () => {
           </p>
         </Motion.div>
 
-        {/* CONTENEDOR DEL CARRUSEL */}
         <div className="relative w-full">
           <div className="absolute inset-y-0 left-0 w-20 bg-linear-to-r from-white dark:from-[#15171b] to-transparent z-10 pointer-events-none"></div>
           <div className="absolute inset-y-0 right-0 w-20 bg-linear-to-l from-white dark:from-[#15171b] to-transparent z-10 pointer-events-none"></div>
-
-          {/* Fila de Movimiento */}
           <div className="flex overflow-hidden">
             <Motion.div
               className="flex gap-6 pr-6"
