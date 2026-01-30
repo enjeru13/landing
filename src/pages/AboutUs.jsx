@@ -3,7 +3,7 @@ import Footer from "../components/layout/Footer";
 import Button from "../components/ui/Button";
 import AboutHero from "../components/sections/about/AboutHero";
 import AboutStats from "../components/sections/about/AboutStats";
-import AboutTeam from "../components/sections/about/AboutTeam";
+// import AboutTeam from "../components/sections/about/AboutTeam";
 import AboutValues from "../components/sections/about/AboutValues";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
@@ -22,7 +22,7 @@ const AboutUs = () => {
         <AboutHero />
         <AboutStats />
         <AboutValues />
-        <AboutTeam />
+        {/* <AboutTeam /> */}
 
         <section className="py-24 bg-white dark:bg-surface-dark border-t border-gray-100 dark:border-gray-800 text-center relative overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>

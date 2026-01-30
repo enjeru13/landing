@@ -17,10 +17,14 @@ export const ABOUT_CONTENT = {
       "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
   },
   stats: [
-    { value: "150+", label: "Proyectos Entregados", sub: "En 12 industrias" },
-    { value: "50+", label: "Clientes Globales", sub: "Confían en nosotros" },
     {
-      value: "10+",
+      value: "30+",
+      label: "Proyectos Entregados",
+      sub: "En Diferentes Sectores",
+    },
+    { value: "20+", label: "Clientes Globales", sub: "Confían en nosotros" },
+    {
+      value: "5+",
       label: "Años de Experiencia",
       sub: "En ingeniería de software",
     },
@@ -54,8 +58,7 @@ export const ABOUT_CONTENT = {
   },
   team: {
     title: "Conoce las Mentes detrás del Código",
-    subtitle:
-      "Un equipo diverso de ingenieros, diseñadores y estrategas unidos por la pasión por la excelencia.",
+    subtitle: "Un equipo de ingenieros unidos por la pasión y la excelencia.",
     members: [
       {
         name: "Sarah Jenkins",

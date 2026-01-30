@@ -19,7 +19,7 @@ export const SERVICES = [
   {
     icon: Code2,
     title: "Desarrollo Web a Medida",
-    desc: "Frontend y Backend robustos construidos con React, Node.js y arquitecturas modernas escalables.",
+    desc: "Frontend y Backend robustos construidos con tecnologías modernas, solidas y escalables.",
     link: "/servicios/web-development",
   },
   {
@@ -33,25 +33,6 @@ export const SERVICES = [
     title: "Sistemas ERP & CRM",
     desc: "Integraciones de gestión empresarial para optimizar operaciones, inventarios y flujos de trabajo complejos.",
     link: "/servicios/erp-crm",
-  },
-];
-
-export const PROJECTS = [
-  {
-    category: "Plataforma SaaS",
-    title: "FinTech Dashboard",
-    desc: "Herramienta de análisis financiero en tiempo real para firmas de trading de alta frecuencia.",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-    cta: "Ver Caso de Estudio",
-  },
-  {
-    category: "Solución Logística",
-    title: "Logistics Pro",
-    desc: "Sistema end-to-end para la gestión de cadenas de suministro y optimización de rutas de flotas.",
-    image:
-      "https://images.unsplash.com/photo-1566576912321-158fa7599663?auto=format&fit=crop&w=800&q=80",
-    cta: "Ver Caso de Estudio",
   },
 ];
 
