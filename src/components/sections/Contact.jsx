@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion as Motion, AnimatePresence } from "framer-motion";
 import { Mail, MapPin, Send, Check, Loader2, ChevronDown } from "lucide-react";
 import Button from "../ui/Button";
@@ -6,13 +6,37 @@ import Button from "../ui/Button";
 const Contact = () => {
   const [formState, setFormState] = useState("idle");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setFormState("submitting");
 
-    setTimeout(() => {
-      setFormState("success");
-    }, 2000);
+    // Recolectar los datos del formulario
+    const formData = new FormData(e.target);
+
+    // IMPORTANTE: Reemplaza esto con tu llave real de Web3Forms
+    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_KEY);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setFormState("success");
+        e.target.reset(); // Limpia los campos del formulario
+      } else {
+        console.error("Error al enviar:", data);
+        setFormState("idle");
+        alert("Hubo un problema enviando el mensaje.");
+      }
+    } catch (error) {
+      console.error("Error de red:", error);
+      setFormState("idle");
+      alert("Error de conexión. Intenta nuevamente.");
+    }
   };
 
   return (
@@ -21,7 +45,7 @@ const Contact = () => {
       id="contact"
     >
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute -top-[20%] -right-[10%] w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px]"></div>
+        <div className="absolute -top-[20%] -right-[10%] w-150 h-150 bg-primary/5 rounded-full blur-[100px]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 md:px-10 relative z-10">
@@ -124,6 +148,12 @@ const Contact = () => {
                     onSubmit={handleSubmit}
                     className="space-y-6"
                   >
+                    <input
+                      type="checkbox"
+                      name="botcheck"
+                      className="hidden"
+                      style={{ display: "none" }}
+                    />
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="flex flex-col gap-2">
                         <label className="text-sm font-bold text-text-main dark:text-gray-300">
@@ -131,6 +161,7 @@ const Contact = () => {
                         </label>
                         <input
                           required
+                          name="nombre"
                           className="w-full h-12 px-4 rounded-lg bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-700 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-gray-400 dark:text-white"
                           placeholder="Tu nombre"
                           type="text"
@@ -142,6 +173,7 @@ const Contact = () => {
                         </label>
                         <input
                           required
+                          name="email"
                           className="w-full h-12 px-4 rounded-lg bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-700 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-gray-400 dark:text-white"
                           placeholder="juan@empresa.com"
                           type="email"
@@ -154,11 +186,22 @@ const Contact = () => {
                         Tipo de Proyecto
                       </label>
                       <div className="relative">
-                        <select className="w-full h-12 px-4 rounded-lg bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-700 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all appearance-none cursor-pointer text-text-main dark:text-white">
-                          <option>Desarrollo Web a Medida</option>
-                          <option>Aplicación Móvil</option>
-                          <option>Sistema ERP / CRM</option>
-                          <option>Consultoría SaaS</option>
+                        <select
+                          name="tipo_proyecto"
+                          className="w-full h-12 px-4 rounded-lg bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-700 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all appearance-none cursor-pointer text-text-main dark:text-white"
+                        >
+                          <option value="Desarrollo Web a Medida">
+                            Desarrollo Web a Medida
+                          </option>
+                          <option value="Aplicación Móvil">
+                            Aplicación Móvil
+                          </option>
+                          <option value="Sistema ERP / CRM">
+                            Sistema ERP / CRM
+                          </option>
+                          <option value="Consultoría SaaS">
+                            Consultoría SaaS
+                          </option>
                         </select>
                         <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
                           <ChevronDown className="w-5 h-5" />
@@ -172,6 +215,7 @@ const Contact = () => {
                       </label>
                       <textarea
                         required
+                        name="mensaje"
                         className="w-full h-32 p-4 rounded-lg bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-700 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none placeholder:text-gray-400 dark:text-white"
                         placeholder="Cuéntanos brevemente sobre tu proyecto..."
                       ></textarea>

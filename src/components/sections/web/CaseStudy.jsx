@@ -44,7 +44,7 @@ const CaseStudy = () => {
             </div>
           </div>
 
-          <div className="flex-1 min-h-[250px] sm:min-h-[350px] lg:min-h-auto relative bg-gray-800">
+          <div className="flex-1 min-h-62.5 sm:min-h-87.5 lg:min-h-auto relative bg-gray-800">
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
               style={{

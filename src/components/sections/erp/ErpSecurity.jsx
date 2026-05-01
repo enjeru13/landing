@@ -16,7 +16,7 @@ const ErpSecurity = () => {
         }}
       ></div>
 
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-erp-accent/20 rounded-full blur-[120px] pointer-events-none transform translate-x-1/3 -translate-y-1/3"></div>
+      <div className="absolute top-0 right-0 w-150 h-150 bg-erp-accent/20 rounded-full blur-[120px] pointer-events-none transform translate-x-1/3 -translate-y-1/3"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

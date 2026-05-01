@@ -45,7 +45,7 @@ const TechStack = () => {
                 return (
                   <div
                     key={idx}
-                    className="flex items-center gap-4 px-6 py-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-background-light dark:bg-background-dark hover:border-primary/50 transition-colors min-w-[180px] sm:min-w-[220px]"
+                    className="flex items-center gap-4 px-6 py-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-background-light dark:bg-background-dark hover:border-primary/50 transition-colors min-w-45 sm:min-w-55"
                   >
                     <div className={`${tech.color} shrink-0`}>
                       <Icon className="w-8 h-8" />

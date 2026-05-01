@@ -34,10 +34,10 @@ const ServiceCard = ({ icon: Icon, title, desc, link }) => {
 
       {link && (
         <div className="pt-4 border-t border-gray-50 dark:border-gray-800/50 flex items-center justify-between group-hover:border-primary/20 transition-colors">
-          <span className="text-xs font-bold uppercase tracking-widest text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-10px] group-hover:translate-x-0">
+          <span className="text-xs font-bold uppercase tracking-widest text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-2.5 group-hover:translate-x-0">
             Saber más
           </span>
-          <div className="text-primary transform transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-[-2px]">
+          <div className="text-primary transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-0.5">
             <ArrowUpRight className="w-5 h-5" />
           </div>
         </div>

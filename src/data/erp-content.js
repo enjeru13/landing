@@ -15,7 +15,6 @@ import {
 } from "lucide-react";
 
 export const ERP_HERO = {
-  badge: "Versión 4.0 Disponible",
   titlePart1: "Orquesta la Inteligencia",
   titlePart2: "de tu Empresa",
   description:

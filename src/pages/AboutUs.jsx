@@ -25,7 +25,7 @@ const AboutUs = () => {
         {/* <AboutTeam /> */}
 
         <section className="py-24 bg-white dark:bg-surface-dark border-t border-gray-100 dark:border-gray-800 text-center relative overflow-hidden">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-150 h-150 bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
 
           <div className="max-w-3xl mx-auto px-4 relative z-10">
             <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 text-text-main dark:text-white">

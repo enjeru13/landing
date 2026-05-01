@@ -35,7 +35,7 @@ const MobileHero = () => {
 
   return (
     <section className="relative w-full px-4 md:px-10 lg:pb-24 pt-32 lg:pt-40 overflow-hidden">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+      <div className="absolute top-0 right-0 w-125 h-125 bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-20 items-center relative z-10">
         <div className="flex flex-col gap-6 text-left relative z-20">
@@ -94,8 +94,8 @@ const MobileHero = () => {
         </div>
 
         <div className="relative w-full flex items-center justify-center py-10 lg:py-0">
-          <div className="absolute w-[500px] h-[500px] border border-gray-200 dark:border-white/5 rounded-full animate-[spin_20s_linear_infinite]"></div>
-          <div className="absolute w-[400px] h-[400px] border border-primary/20 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+          <div className="absolute w-125 h-125 border border-gray-200 dark:border-white/5 rounded-full animate-[spin_20s_linear_infinite]"></div>
+          <div className="absolute w-100 h-100 border border-primary/20 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
 
           <Motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -104,13 +104,13 @@ const MobileHero = () => {
             className="relative z-20"
           >
             <div
-              className="relative w-[250px] h-[520px] md:w-[280px] md:h-[580px] bg-[#1a1a1a] rounded-[45px] border-[5px] border-[#2a2a2a] shadow-2xl overflow-hidden ring-1 ring-white/20"
+              className="relative w-62.5 h-130 md:w-70 md:h-145 bg-[#1a1a1a] rounded-[45px] border-[5px] border-[#2a2a2a] shadow-2xl overflow-hidden ring-1 ring-white/20"
               style={{ boxShadow: "0 20px 40px -10px rgba(0, 0, 0, 0.6)" }}
             >
-              <div className="absolute top-24 -left-[6px] w-[2px] h-7 bg-gray-600 rounded-l-md"></div>
-              <div className="absolute top-36 -left-[6px] w-[2px] h-12 bg-gray-600 rounded-l-md"></div>
-              <div className="absolute top-52 -left-[6px] w-[2px] h-12 bg-gray-600 rounded-l-md"></div>
-              <div className="absolute top-40 -right-[6px] w-[2px] h-16 bg-gray-600 rounded-r-md"></div>
+              <div className="absolute top-24 -left-1.5 w-0.5 h-7 bg-gray-600 rounded-l-md"></div>
+              <div className="absolute top-36 -left-1.5 w-0.5 h-12 bg-gray-600 rounded-l-md"></div>
+              <div className="absolute top-52 -left-1.5 w-0.5 h-12 bg-gray-600 rounded-l-md"></div>
+              <div className="absolute top-40 -right-1.5 w-0.5 h-16 bg-gray-600 rounded-r-md"></div>
 
               <div className="absolute top-1 left-1/2 -translate-x-1/2 w-22 h-5 bg-black rounded-full z-40 flex items-center justify-center gap-2 pointer-events-none">
                 <div className="w-12 h-3 bg-[#111] rounded-full"></div>

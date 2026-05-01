@@ -47,7 +47,7 @@ const WebHero = () => {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-text-muted dark:text-gray-400 max-w-[600px] leading-relaxed">
+          <p className="text-lg md:text-xl text-text-muted dark:text-gray-400 max-w-125 leading-relaxed">
             Construimos aplicaciones web de nivel empresarial que crecen con tu
             negocio.
           </p>

@@ -29,7 +29,7 @@ const Hero = () => {
   return (
     <section className="relative bg-background-light dark:bg-background-dark overflow-hidden pt-24 pb-12 lg:pt-24 lg:min-h-[90vh] flex items-center">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]"></div>
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
+      <div className="absolute top-0 right-0 w-125 h-125 bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 md:px-10 relative z-10 w-full">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">

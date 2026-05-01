@@ -24,7 +24,7 @@ const ErpHero = () => {
     },
   };
 
-  const { badge, titlePart1, titlePart2, description } = ERP_HERO;
+  const { titlePart1, titlePart2, description } = ERP_HERO;
 
   return (
     <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-erp-bg-light dark:bg-erp-bg-dark transition-colors duration-300">
@@ -36,7 +36,7 @@ const ErpHero = () => {
         }}
       ></div>
 
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[500px] bg-erp-primary/10 dark:bg-erp-accent/5 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-125 bg-erp-primary/10 dark:bg-erp-accent/5 rounded-full blur-[120px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
         <Motion.div
@@ -45,16 +45,6 @@ const ErpHero = () => {
           transition={{ duration: 0.6 }}
           className="max-w-4xl flex flex-col items-center gap-6"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-white/5 border border-erp-primary/10 dark:border-white/10 shadow-sm backdrop-blur-sm">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-erp-accent opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-erp-accent"></span>
-            </span>
-            <span className="text-xs font-bold text-erp-primary dark:text-white uppercase tracking-wider">
-              {badge}
-            </span>
-          </div>
-
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-erp-text-main dark:text-white leading-[1.1] tracking-tight">
             {titlePart1} <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-erp-primary to-erp-accent dark:from-white dark:to-erp-accent">

@@ -42,8 +42,6 @@ const SocialIcon = ({ name, url }) => {
 };
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className="bg-white dark:bg-[#15171b] border-t border-gray-100 dark:border-gray-800 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 md:px-10">
@@ -92,7 +90,7 @@ const Footer = () => {
         <div className="w-full h-px bg-gray-100 dark:bg-gray-800 mb-8"></div>
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-text-muted dark:text-gray-500 text-center md:text-left">
-            © {currentYear} Pluma8. Todos los derechos reservados.
+            © {new Date().getFullYear()} Pluma8. Todos los derechos reservados.
           </p>
         </div>
       </div>
