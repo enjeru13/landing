@@ -1,4 +1,5 @@
 import Navbar from "../components/layout/Navbar";
+import SEO from "../components/utils/SEO";
 import Footer from "../components/layout/Footer";
 import Button from "../components/ui/Button";
 import PortfolioHero from "../components/sections/portfolio/PortfolioHero";
@@ -14,6 +15,11 @@ const Portfolio = () => {
 
   return (
     <div className="font-body text-text-main dark:text-white bg-background-light dark:bg-background-dark min-h-screen selection:bg-primary/20 selection:text-primary">
+      <SEO
+        title="Portafolio"
+        description="Proyectos reales desarrollados por Pluma8. Aplicaciones web, móviles y sistemas ERP para empresas de distintos sectores."
+        path="/portfolio"
+      />
       <Navbar />
 
       <main className="overflow-hidden">

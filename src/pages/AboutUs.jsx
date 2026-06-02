@@ -1,4 +1,5 @@
 import Navbar from "../components/layout/Navbar";
+import SEO from "../components/utils/SEO";
 import Footer from "../components/layout/Footer";
 import Button from "../components/ui/Button";
 import AboutHero from "../components/sections/about/AboutHero";
@@ -16,6 +17,11 @@ const AboutUs = () => {
 
   return (
     <div className="font-body text-text-main dark:text-white bg-background-light dark:bg-background-dark min-h-screen selection:bg-primary/20 selection:text-primary">
+      <SEO
+        title="Nosotros"
+        description="Conoce al equipo detrás de Pluma8. Somos una agencia de desarrollo de software apasionada por crear soluciones digitales que impulsan negocios."
+        path="/nosotros"
+      />
       <Navbar />
 
       <main className="overflow-hidden pt-4">

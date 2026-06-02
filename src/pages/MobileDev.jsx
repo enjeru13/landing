@@ -1,4 +1,5 @@
 import Navbar from "../components/layout/Navbar";
+import SEO from "../components/utils/SEO";
 import Footer from "../components/layout/Footer";
 import Button from "../components/ui/Button";
 import MobileHero from "../components/sections/mobile/MobileHero";
@@ -16,6 +17,11 @@ const MobileDev = () => {
 
   return (
     <div className="font-body text-text-main dark:text-white bg-background-light dark:bg-background-dark min-h-screen selection:bg-primary/20 selection:text-primary">
+      <SEO
+        title="Desarrollo de Aplicaciones Móviles"
+        description="Creamos apps iOS y Android nativas y multiplataforma con Flutter y React Native. Experiencias móviles que los usuarios aman."
+        path="/servicios/mobile-development"
+      />
       <Navbar />
 
       <main className="overflow-hidden">

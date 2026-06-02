@@ -1,4 +1,5 @@
 import Navbar from "../components/layout/Navbar";
+import SEO from "../components/utils/SEO";
 import Footer from "../components/layout/Footer";
 import Button from "../components/ui/Button";
 import ErpHero from "../components/sections/erp/ErpHero";
@@ -17,6 +18,11 @@ const ErpDev = () => {
 
   return (
     <div className="font-body text-text-main dark:text-white bg-background-light dark:bg-background-dark min-h-screen selection:bg-erp-primary/20 selection:text-erp-primary">
+      <SEO
+        title="Sistemas ERP y CRM a Medida"
+        description="Desarrollamos sistemas ERP y CRM personalizados para optimizar operaciones, inventarios y flujos de trabajo empresariales complejos."
+        path="/servicios/erp-crm"
+      />
       <Navbar />
 
       <main className="overflow-hidden">

@@ -33,6 +33,8 @@ const SocialIcon = ({ name, url }) => {
   return (
     <a
       href={url}
+      target="_blank"
+      rel="noopener noreferrer"
       className="w-10 h-10 rounded-full bg-gray-100 dark:bg-surface-dark flex items-center justify-center text-text-muted hover:bg-primary hover:text-white transition-all duration-300"
       aria-label={name}
     >

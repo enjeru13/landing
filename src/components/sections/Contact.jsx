@@ -1,41 +1,85 @@
 import { useState } from "react";
-import { motion as Motion, AnimatePresence } from "framer-motion";
-import { Mail, MapPin, Send, Check, Loader2, ChevronDown } from "lucide-react";
+import { m as Motion, AnimatePresence } from "framer-motion";
+import { Mail, MapPin, Send, Check, Loader2, ChevronDown, AlertCircle } from "lucide-react";
 import Button from "../ui/Button";
+
+const FIELDS = {
+  nombre: { label: "Nombre", type: "text", placeholder: "Tu nombre" },
+  email: { label: "Email", type: "email", placeholder: "juan@empresa.com" },
+  mensaje: { label: "Mensaje", type: "textarea", placeholder: "Cuéntanos brevemente sobre tu proyecto..." },
+};
+
+const validate = (values) => {
+  const errors = {};
+  if (!values.nombre.trim()) errors.nombre = "El nombre es requerido";
+  if (!values.email.trim()) {
+    errors.email = "El email es requerido";
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
+    errors.email = "Email inválido";
+  }
+  if (!values.mensaje.trim()) errors.mensaje = "El mensaje es requerido";
+  else if (values.mensaje.trim().length < 10) errors.mensaje = "Mínimo 10 caracteres";
+  return errors;
+};
+
+const inputClass = (error) =>
+  `w-full px-4 rounded-lg bg-background-light dark:bg-background-dark border outline-none transition-all placeholder:text-gray-400 dark:text-white focus:ring-1 ${
+    error
+      ? "border-red-400 focus:border-red-400 focus:ring-red-400"
+      : "border-gray-200 dark:border-gray-700 focus:border-primary focus:ring-primary"
+  }`;
+
+const FieldError = ({ msg }) =>
+  msg ? (
+    <span className="flex items-center gap-1 text-red-500 text-xs mt-1">
+      <AlertCircle size={12} /> {msg}
+    </span>
+  ) : null;
 
 const Contact = () => {
   const [formState, setFormState] = useState("idle");
+  const [errors, setErrors] = useState({});
+  const [submitError, setSubmitError] = useState("");
+  const [values, setValues] = useState({ nombre: "", email: "", mensaje: "", tipo_proyecto: "Desarrollo Web a Medida" });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setValues((v) => ({ ...v, [name]: value }));
+    if (errors[name]) setErrors((err) => ({ ...err, [name]: "" }));
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const fieldErrors = validate(values);
+    if (Object.keys(fieldErrors).length > 0) {
+      setErrors(fieldErrors);
+      return;
+    }
+
     setFormState("submitting");
+    setSubmitError("");
 
-    // Recolectar los datos del formulario
-    const formData = new FormData(e.target);
-
-    // IMPORTANTE: Reemplaza esto con tu llave real de Web3Forms
+    const formData = new FormData();
     formData.append("access_key", import.meta.env.VITE_WEB3FORMS_KEY);
+    Object.entries(values).forEach(([k, v]) => formData.append(k, v));
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData,
       });
-
       const data = await response.json();
 
       if (data.success) {
         setFormState("success");
-        e.target.reset(); // Limpia los campos del formulario
+        setValues({ nombre: "", email: "", mensaje: "", tipo_proyecto: "Desarrollo Web a Medida" });
       } else {
-        console.error("Error al enviar:", data);
         setFormState("idle");
-        alert("Hubo un problema enviando el mensaje.");
+        setSubmitError("Hubo un problema enviando el mensaje. Intenta nuevamente.");
       }
-    } catch (error) {
-      console.error("Error de red:", error);
+    } catch {
       setFormState("idle");
-      alert("Error de conexión. Intenta nuevamente.");
+      setSubmitError("Error de conexión. Intenta nuevamente.");
     }
   };
 
@@ -103,7 +147,6 @@ const Contact = () => {
             </div>
           </Motion.div>
 
-          {/* Right: Form */}
           <Motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -113,7 +156,6 @@ const Contact = () => {
             <div className="bg-white dark:bg-surface-dark p-8 md:p-10 rounded-2xl shadow-[0_20px_40px_-10px_rgba(0,0,0,0.05)] dark:shadow-none border border-gray-100 dark:border-gray-800 relative overflow-hidden">
               <AnimatePresence mode="wait">
                 {formState === "success" ? (
-                  // Mensaje de Éxito
                   <Motion.div
                     key="success"
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -139,69 +181,57 @@ const Contact = () => {
                     </Button>
                   </Motion.div>
                 ) : (
-                  // Formulario
                   <Motion.form
                     key="form"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0, y: -20 }}
                     onSubmit={handleSubmit}
+                    noValidate
                     className="space-y-6"
                   >
-                    <input
-                      type="checkbox"
-                      name="botcheck"
-                      className="hidden"
-                      style={{ display: "none" }}
-                    />
+                    <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="flex flex-col gap-2">
-                        <label className="text-sm font-bold text-text-main dark:text-gray-300">
-                          Nombre
-                        </label>
+                      <div className="flex flex-col gap-1">
+                        <label className="text-sm font-bold text-text-main dark:text-gray-300">Nombre</label>
                         <input
-                          required
                           name="nombre"
-                          className="w-full h-12 px-4 rounded-lg bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-700 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-gray-400 dark:text-white"
-                          placeholder="Tu nombre"
                           type="text"
+                          placeholder="Tu nombre"
+                          value={values.nombre}
+                          onChange={handleChange}
+                          className={`${inputClass(errors.nombre)} h-12`}
                         />
+                        <FieldError msg={errors.nombre} />
                       </div>
-                      <div className="flex flex-col gap-2">
-                        <label className="text-sm font-bold text-text-main dark:text-gray-300">
-                          Email
-                        </label>
+                      <div className="flex flex-col gap-1">
+                        <label className="text-sm font-bold text-text-main dark:text-gray-300">Email</label>
                         <input
-                          required
                           name="email"
-                          className="w-full h-12 px-4 rounded-lg bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-700 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-gray-400 dark:text-white"
-                          placeholder="juan@empresa.com"
                           type="email"
+                          placeholder="juan@empresa.com"
+                          value={values.email}
+                          onChange={handleChange}
+                          className={`${inputClass(errors.email)} h-12`}
                         />
+                        <FieldError msg={errors.email} />
                       </div>
                     </div>
 
-                    <div className="flex flex-col gap-2">
-                      <label className="text-sm font-bold text-text-main dark:text-gray-300">
-                        Tipo de Proyecto
-                      </label>
+                    <div className="flex flex-col gap-1">
+                      <label className="text-sm font-bold text-text-main dark:text-gray-300">Tipo de Proyecto</label>
                       <div className="relative">
                         <select
                           name="tipo_proyecto"
+                          value={values.tipo_proyecto}
+                          onChange={handleChange}
                           className="w-full h-12 px-4 rounded-lg bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-700 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all appearance-none cursor-pointer text-text-main dark:text-white"
                         >
-                          <option value="Desarrollo Web a Medida">
-                            Desarrollo Web a Medida
-                          </option>
-                          <option value="Aplicación Móvil">
-                            Aplicación Móvil
-                          </option>
-                          <option value="Sistema ERP / CRM">
-                            Sistema ERP / CRM
-                          </option>
-                          <option value="Consultoría SaaS">
-                            Consultoría SaaS
-                          </option>
+                          <option value="Desarrollo Web a Medida">Desarrollo Web a Medida</option>
+                          <option value="Aplicación Móvil">Aplicación Móvil</option>
+                          <option value="Sistema ERP / CRM">Sistema ERP / CRM</option>
+                          <option value="Consultoría SaaS">Consultoría SaaS</option>
                         </select>
                         <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
                           <ChevronDown className="w-5 h-5" />
@@ -209,17 +239,23 @@ const Contact = () => {
                       </div>
                     </div>
 
-                    <div className="flex flex-col gap-2">
-                      <label className="text-sm font-bold text-text-main dark:text-gray-300">
-                        Mensaje
-                      </label>
+                    <div className="flex flex-col gap-1">
+                      <label className="text-sm font-bold text-text-main dark:text-gray-300">Mensaje</label>
                       <textarea
-                        required
                         name="mensaje"
-                        className="w-full h-32 p-4 rounded-lg bg-background-light dark:bg-background-dark border border-gray-200 dark:border-gray-700 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none placeholder:text-gray-400 dark:text-white"
                         placeholder="Cuéntanos brevemente sobre tu proyecto..."
-                      ></textarea>
+                        value={values.mensaje}
+                        onChange={handleChange}
+                        className={`${inputClass(errors.mensaje)} h-32 p-4 resize-none`}
+                      />
+                      <FieldError msg={errors.mensaje} />
                     </div>
+
+                    {submitError && (
+                      <p className="flex items-center gap-2 text-red-500 text-sm bg-red-50 dark:bg-red-900/20 px-4 py-3 rounded-lg">
+                        <AlertCircle size={16} /> {submitError}
+                      </p>
+                    )}
 
                     <Button
                       type="submit"
@@ -227,15 +263,9 @@ const Contact = () => {
                       disabled={formState === "submitting"}
                     >
                       {formState === "submitting" ? (
-                        <>
-                          Enviando...
-                          <Loader2 className="w-5 h-5 animate-spin" />
-                        </>
+                        <>Enviando... <Loader2 className="w-5 h-5 animate-spin" /></>
                       ) : (
-                        <>
-                          Enviar Mensaje
-                          <Send className="w-4 h-4" />
-                        </>
+                        <>Enviar Mensaje <Send className="w-4 h-4" /></>
                       )}
                     </Button>
                   </Motion.form>

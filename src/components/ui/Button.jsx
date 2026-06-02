@@ -11,6 +11,8 @@ const Button = ({ children, variant = "primary", className, ...props }) => {
     outline:
       "bg-transparent border border-gray-200 dark:border-gray-700 hover:border-primary text-text-main dark:text-white hover:bg-background-light dark:hover:bg-surface-dark",
     ghost: "bg-transparent text-text-muted hover:text-primary shadow-none p-0",
+    small:
+      "bg-primary hover:bg-primary-dark text-white shadow-primary/25 hover:shadow-primary/40 py-2 px-5 text-sm",
   };
 
   return (

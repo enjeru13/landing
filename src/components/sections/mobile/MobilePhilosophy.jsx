@@ -1,4 +1,4 @@
-import { motion as Motion } from "framer-motion";
+import { m as Motion } from "framer-motion";
 import { MOBILE_PHILOSOPHY } from "../../../data/mobile-content";
 
 const MobilePhilosophy = () => {

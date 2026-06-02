@@ -1,4 +1,4 @@
-import { motion as Motion } from "framer-motion";
+import { m as Motion } from "framer-motion";
 import { ArrowRight, FileText } from "lucide-react";
 import Button from "../ui/Button";
 import HeroIllustration from "./HeroIllustration";

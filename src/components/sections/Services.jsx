@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { Link } from "react-router-dom";
 import { SERVICES } from "../../data/content";
-import { motion as Motion } from "framer-motion";
+import { m as Motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 const cardVariants = {

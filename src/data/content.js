@@ -98,7 +98,6 @@ export const FOOTER_LINKS = [
       { name: "Desarrollo Web", href: "/servicios/web-development" },
       { name: "Apps Móviles", href: "/servicios/mobile-development" },
       { name: "Sistemas ERP & CRM", href: "/servicios/erp-crm" },
-      { name: "Arquitectura SaaS", href: "/servicios/saas" },
     ],
   },
 ];

@@ -1,4 +1,4 @@
-import { motion as Motion } from "framer-motion";
+import { m as Motion } from "framer-motion";
 import { Shield, FileText } from "lucide-react";
 import { ERP_SECURITY } from "../../../data/erp-content";
 

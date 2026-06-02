@@ -1,4 +1,4 @@
-import { motion as Motion } from "framer-motion";
+import { m as Motion } from "framer-motion";
 import { ArrowRight, ShieldCheck, Server, FileText } from "lucide-react";
 import { ERP_HERO } from "../../../data/erp-content";
 import ErpHeroImage from "../../../assets/users.png";

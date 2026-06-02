@@ -1,4 +1,4 @@
-import { motion as Motion } from "framer-motion";
+import { m as Motion } from "framer-motion";
 import { ABOUT_CONTENT } from "../../../data/about-content";
 
 const AboutValues = () => {

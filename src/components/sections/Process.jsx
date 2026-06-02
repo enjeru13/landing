@@ -1,4 +1,4 @@
-import { motion as Motion } from "framer-motion";
+import { m as Motion } from "framer-motion";
 import { PROCESS_STEPS } from "../../data/content";
 
 const ProcessStep = ({ step }) => {

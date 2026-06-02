@@ -1,4 +1,4 @@
-import { motion as Motion } from "framer-motion";
+import { m as Motion } from "framer-motion";
 import { Code2, CheckCircle2 } from "lucide-react";
 import Button from "../../ui/Button";
 import { FileText, ArrowRight } from "lucide-react";

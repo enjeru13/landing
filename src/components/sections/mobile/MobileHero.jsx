@@ -1,4 +1,4 @@
-import { motion as Motion } from "framer-motion";
+import { m as Motion } from "framer-motion";
 import Button from "../../ui/Button";
 import { MOBILE_HERO } from "../../../data/mobile-content";
 import iPhoneScreenImg from "../../../assets/Widgets=None.png";

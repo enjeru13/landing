@@ -1,4 +1,5 @@
 import Navbar from "../components/layout/Navbar";
+import SEO from "../components/utils/SEO";
 import Footer from "../components/layout/Footer";
 import Button from "../components/ui/Button";
 import WebHero from "../components/sections/web/WebHero";
@@ -17,6 +18,11 @@ const WebDev = () => {
 
   return (
     <div className="font-body text-text-main dark:text-white bg-background-light dark:bg-background-dark min-h-screen selection:bg-primary/20 selection:text-primary">
+      <SEO
+        title="Desarrollo Web a Medida"
+        description="Desarrollamos aplicaciones web modernas y escalables con React, Next.js, Node.js y más. Frontend y backend robustos para tu negocio."
+        path="/servicios/web-development"
+      />
       <Navbar />
 
       <main className="overflow-hidden">

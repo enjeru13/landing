@@ -1,4 +1,4 @@
-import { motion as Motion } from "framer-motion";
+import { m as Motion } from "framer-motion";
 import { WEB_FEATURES } from "../../../data/web-content";
 
 const WebFeatures = () => {

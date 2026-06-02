@@ -1,4 +1,4 @@
-import { motion as Motion } from "framer-motion";
+import { m as Motion } from "framer-motion";
 import { MOBILE_TECH } from "../../../data/mobile-content";
 
 const MobileTechStack = () => {

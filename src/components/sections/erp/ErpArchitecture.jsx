@@ -1,4 +1,4 @@
-import { motion as Motion } from "framer-motion";
+import { m as Motion } from "framer-motion";
 import { ERP_ARCHITECTURE } from "../../../data/erp-content";
 
 const ErpArchitecture = () => {

@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion as Motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Code2 } from "lucide-react";
+import { m as Motion, AnimatePresence } from "framer-motion";
+import { Menu, X, Code2, Sun, Moon } from "lucide-react";
 import { NAV_LINKS } from "../../data/content";
 import Button from "../ui/Button";
+import { useDarkMode } from "../../hooks/useDarkMode";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [dark, toggleDark] = useDarkMode();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,6 +57,13 @@ const Navbar = () => {
                 </Link>
               ))}
             </nav>
+            <button
+              onClick={toggleDark}
+              className="p-2 rounded-lg text-text-muted dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5 transition-colors"
+              aria-label="Toggle dark mode"
+            >
+              {dark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
             <Link to="/#contact">
               <Button variant="small" className="shadow-none hover:shadow-lg">
                 Empezar Proyecto
@@ -62,12 +71,21 @@ const Navbar = () => {
             </Link>
           </div>
 
+          <div className="flex items-center gap-2 md:hidden">
+            <button
+              onClick={toggleDark}
+              className="p-2 rounded-lg text-text-muted dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5 transition-colors"
+              aria-label="Toggle dark mode"
+            >
+              {dark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-text-main dark:text-white hover:bg-gray-100 dark:hover:bg-white/5 rounded-md transition-colors"
+            className="p-2 text-text-main dark:text-white hover:bg-gray-100 dark:hover:bg-white/5 rounded-md transition-colors"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
+          </div>
         </div>
       </header>
 
