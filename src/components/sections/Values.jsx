@@ -68,7 +68,10 @@ const Values = () => {
               <img
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 alt="Equipo de desarrolladores colaborando en una oficina moderna"
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=500&q=75"
+                loading="lazy"
+                width="500"
+                height="400"
               />
 
               {/* Detalle decorativo flotante (opcional) */}

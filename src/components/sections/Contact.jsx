@@ -194,8 +194,9 @@ const Contact = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="flex flex-col gap-1">
-                        <label className="text-sm font-bold text-text-main dark:text-gray-300">Nombre</label>
+                        <label htmlFor="contact-nombre" className="text-sm font-bold text-text-main dark:text-gray-300">Nombre</label>
                         <input
+                          id="contact-nombre"
                           name="nombre"
                           type="text"
                           placeholder="Tu nombre"
@@ -206,8 +207,9 @@ const Contact = () => {
                         <FieldError msg={errors.nombre} />
                       </div>
                       <div className="flex flex-col gap-1">
-                        <label className="text-sm font-bold text-text-main dark:text-gray-300">Email</label>
+                        <label htmlFor="contact-email" className="text-sm font-bold text-text-main dark:text-gray-300">Email</label>
                         <input
+                          id="contact-email"
                           name="email"
                           type="email"
                           placeholder="juan@empresa.com"
@@ -220,9 +222,10 @@ const Contact = () => {
                     </div>
 
                     <div className="flex flex-col gap-1">
-                      <label className="text-sm font-bold text-text-main dark:text-gray-300">Tipo de Proyecto</label>
+                      <label htmlFor="contact-tipo" className="text-sm font-bold text-text-main dark:text-gray-300">Tipo de Proyecto</label>
                       <div className="relative">
                         <select
+                          id="contact-tipo"
                           name="tipo_proyecto"
                           value={values.tipo_proyecto}
                           onChange={handleChange}
@@ -240,8 +243,9 @@ const Contact = () => {
                     </div>
 
                     <div className="flex flex-col gap-1">
-                      <label className="text-sm font-bold text-text-main dark:text-gray-300">Mensaje</label>
+                      <label htmlFor="contact-mensaje" className="text-sm font-bold text-text-main dark:text-gray-300">Mensaje</label>
                       <textarea
+                        id="contact-mensaje"
                         name="mensaje"
                         placeholder="Cuéntanos brevemente sobre tu proyecto..."
                         value={values.mensaje}

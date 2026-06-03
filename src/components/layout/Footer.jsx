@@ -70,9 +70,9 @@ const Footer = () => {
 
           {FOOTER_LINKS.map((section, idx) => (
             <div key={idx}>
-              <h4 className="font-bold text-text-main dark:text-white mb-6">
+              <p className="font-bold text-text-main dark:text-white mb-6">
                 {section.title}
-              </h4>
+              </p>
               <ul className="space-y-4">
                 {section.links.map((link, linkIdx) => (
                   <li key={linkIdx}>

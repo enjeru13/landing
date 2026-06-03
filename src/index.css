@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "@fontsource-variable/epilogue";
+@import "@fontsource-variable/manrope";
 
 @variant dark (&:where(.dark, .dark *));
 
@@ -14,10 +16,10 @@
   --color-surface-dark: #2a2d35;
 
   --color-text-main: #0c1c1d;
-  --color-text-muted: #5c7072;
+  --color-text-muted: #4a5e60;
 
-  --font-display: "Epilogue", sans-serif;
-  --font-body: "Manrope", sans-serif;
+  --font-display: "Epilogue Variable", sans-serif;
+  --font-body: "Manrope Variable", sans-serif;
 
   --color-erp-primary: #0d4659;
   --color-erp-primary-hover: #093240;
@@ -30,7 +32,7 @@
   --color-erp-surface-dark: #2a2e33;
 
   --color-erp-text-main: #0e171b;
-  --color-erp-text-sub: #5c707c;
+  --color-erp-text-sub: #4a5e6a;
 }
 
 @layer utilities {

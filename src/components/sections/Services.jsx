@@ -24,9 +24,9 @@ const ServiceCard = ({ icon: Icon, title, desc, link }) => {
 
       {/* Título y Descripción */}
       <div className="grow">
-        <h4 className="font-display font-bold text-xl text-text-main dark:text-white mb-3">
+        <h3 className="font-display font-bold text-xl text-text-main dark:text-white mb-3">
           {title}
-        </h4>
+        </h3>
         <p className="text-sm text-text-muted dark:text-gray-400 leading-relaxed mb-6">
           {desc}
         </p>
@@ -78,7 +78,7 @@ const Services = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-10">
         <div className="flex flex-col md:flex-row gap-10 mb-16 items-start md:items-end justify-between">
           <div className="max-w-2xl">
-            <Motion.h2
+            <Motion.p
               variants={textVariants}
               initial="hidden"
               whileInView="visible"
@@ -86,9 +86,9 @@ const Services = () => {
               className="text-primary font-bold uppercase tracking-wider text-sm mb-3"
             >
               Nuestra Experiencia
-            </Motion.h2>
+            </Motion.p>
 
-            <Motion.h3
+            <Motion.h2
               variants={textVariants}
               initial="hidden"
               whileInView="visible"
@@ -97,7 +97,7 @@ const Services = () => {
               className="font-display font-bold text-3xl md:text-4xl text-text-main dark:text-white leading-tight"
             >
               Soluciones integrales para <br /> la era digital.
-            </Motion.h3>
+            </Motion.h2>
           </div>
 
           <Motion.p
